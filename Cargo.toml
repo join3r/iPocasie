@@ -1,0 +1,22 @@
+[package]
+name = "iPocasie"
+version = "0.1.0"
+authors = ["join3r <join3r@gmail.com>"]
+edition = "2018"
+license = "CC-BY-NC-ND-4.0"
+
+[dependencies]
+tts = "0.14.0"
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+anyhow = "1"
+
+[profile.release]
+opt-level = "z"
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = "abort"
+incremental = false
+overflow-checks = true
