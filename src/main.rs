@@ -6,6 +6,6 @@ use one_call_api::get_weather;
 use forecast::Forecast;
 
 fn main() -> Result<()> {
-    let text = get_weather("Roznava".to_string());
+    let text = get_weather("Roznava".to_string())?;
     Ok(())
 }
