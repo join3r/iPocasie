@@ -1,8 +1,11 @@
-use std::collections::HashMap;
+use anyhow::Result;
 
-pub fn get_weather() -> Result<(), Box<dyn std::error::Error>> {
-    let resp = reqwest::blocking::get("https://httpbin.org/ip")?
-        .json::<HashMap<String, String>>()?;
-    println!("{:#?}", resp);
-    Ok(())
+const API_KEY: &str = include_str!("../api-key.secret");
+
+pub fn get_weather(mesto: String) -> Result<String> {
+    Ok(reqwest::blocking::get(&format!(
+        "http://api.openweathermap.org/data/2.5/forecast?q={}&units=metric&lang=en&appid={}",
+        mesto, API_KEY
+    ))?
+    .text()?)
 }
