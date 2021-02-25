@@ -1,3 +1,4 @@
+#![allow(non_snake_case)]
 use std::io::{self, Write};
 
 use anyhow::Result;
