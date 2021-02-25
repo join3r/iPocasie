@@ -1,5 +1,5 @@
 1. Lokaciu
-    - cez parameter
+    - od uzivatela
     - cez ipgeolocate
 
     Zadaj lokaciu (ipgeolocate lokacia):
